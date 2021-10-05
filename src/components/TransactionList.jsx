@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../context/GlobalState";
 import Transaction from "./Transaction";
 import styled from "styled-components";
@@ -12,7 +12,11 @@ const Title = styled.h3`
 `;
 
 const TransactionList = () => {
-  const { transactions } = useContext(Context);
+  const { transactions, getTransactions } = useContext(Context);
+
+  useEffect(() => {
+    getTransactions();
+  }, []);
 
   return (
     <Container>
