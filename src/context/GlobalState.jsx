@@ -22,12 +22,7 @@ export const Provider = ({ children }) => {
   const getTransactions = async () => {
     try {
       const response = await axios.get(
-        "https://git.heroku.com/expense-server-tracker.git/transactions",
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        "https://git.heroku.com/expense-server-tracker.git/transactions"
       );
 
       console.log("GlobalState", response);
