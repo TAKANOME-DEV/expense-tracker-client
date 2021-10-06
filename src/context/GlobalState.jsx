@@ -27,12 +27,12 @@ export const Provider = ({ children }) => {
 
       dispatch({
         type: GET_TRANSACTIONS,
-        payload: response,
+        payload: response.data,
       });
     } catch (err) {
       dispatch({
         type: TRANSACTION_ERROR,
-        payload: err.response,
+        payload: err.response.data,
       });
     }
   };
@@ -48,14 +48,15 @@ export const Provider = ({ children }) => {
           },
         }
       );
+
       dispatch({
         type: ADD_TRANSACTION,
-        payload: response,
+        payload: response.data[0],
       });
     } catch (err) {
       dispatch({
         type: TRANSACTION_ERROR,
-        payload: err.response,
+        payload: err.response.data[0],
       });
     }
   };
@@ -65,14 +66,15 @@ export const Provider = ({ children }) => {
       const response = await axios.delete(
         `https://expense-server-tracker.herokuapp.com/transactions/${id}`
       );
+
       dispatch({
         type: DELETE_TRANSACTION,
-        payload: response,
+        payload: response.data.id,
       });
     } catch (err) {
       dispatch({
         type: TRANSACTION_ERROR,
-        payload: err.response,
+        payload: err.response.data,
       });
     }
   };

@@ -13,7 +13,6 @@ const Title = styled.h3`
 
 const TransactionList = () => {
   const { transactions, getTransactions } = useContext(Context);
-  console.log("TransactionList", getTransactions);
 
   useEffect(() => {
     getTransactions();

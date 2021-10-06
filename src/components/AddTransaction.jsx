@@ -54,7 +54,7 @@ const AddTransaction = () => {
     e.preventDefault();
     const newTransaction = {
       name,
-      amount: parseInt(amount),
+      amount,
     };
     addTransaction(newTransaction);
   };
