@@ -22,10 +22,8 @@ export const Provider = ({ children }) => {
   const getTransactions = async () => {
     try {
       const response = await axios.get(
-        "https://git.heroku.com/expense-server-tracker.git/transactions"
+        "https://expense-server-tracker.herokuapp.com/transactions"
       );
-
-      console.log("GlobalState", response);
 
       dispatch({
         type: GET_TRANSACTIONS,
@@ -42,7 +40,7 @@ export const Provider = ({ children }) => {
   const addTransaction = async (transaction) => {
     try {
       const response = await axios.post(
-        "https://git.heroku.com/expense-server-tracker.git/transactions",
+        "https://expense-server-tracker.herokuapp.com/transactions",
         transaction,
         {
           headers: {
@@ -65,7 +63,7 @@ export const Provider = ({ children }) => {
   const deleteTransaction = async (id) => {
     try {
       const response = await axios.delete(
-        `https://git.heroku.com/expense-server-tracker.git/transactions/${id}`
+        `https://expense-server-tracker.herokuapp.com/transactions/${id}`
       );
       dispatch({
         type: DELETE_TRANSACTION,
