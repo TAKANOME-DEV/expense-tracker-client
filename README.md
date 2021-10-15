@@ -1,4 +1,4 @@
-## Preview : https://expense-tracker-frontend.netlify.app/
+
 ## Backend : https://github.com/TAKANOME-DEV/expense-tracker-backend
 # Getting Started with Create React App
 
