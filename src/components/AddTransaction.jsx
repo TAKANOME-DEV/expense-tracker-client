@@ -32,7 +32,7 @@ const Input = styled.input`
   font-size: 20px;
   padding: 8px 10px;
   border-radius: 10px;
-  border: none;
+  border: 3px solid ${({ theme }) => theme.text};
   outline: none;
 `;
 
