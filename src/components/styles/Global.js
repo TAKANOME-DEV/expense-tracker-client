@@ -5,6 +5,11 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --green-color: #2ecc71;
     --red-color: #c0392b;
+    --dark-color: #2F303A;
+    --white-color: #ffffff;
+
+    --white-boxShadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    --dark-boxShadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
 
   * {
@@ -27,15 +32,13 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const lightTheme = {
-  body: "#f7f7f7",
-  text: "#333",
-  boxShadow:
-    "5px 5px 10px rgba(0, 0, 0, 0.12), 1px 1px 5px rgba(0, 0, 0, 0.24)",
+  body: "var(--white-color)",
+  text: "var(--dark-color)",
+  boxShadow: "var(--white-boxShadow)",
 };
 
 export const darkTheme = {
-  body: "#333",
-  text: "#fff",
-  boxShadow:
-    "5px 10px 5px rgba(0, 0, 0, 0.12), 2px 2px 20px 3px rgba(0, 0, 0, 0.24)",
+  body: "var(--dark-color)",
+  text: "var(--white-color)",
+  boxShadow: "var(--dark-boxShadow)",
 };
