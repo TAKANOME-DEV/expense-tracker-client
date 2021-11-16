@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +22,6 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: "Lato", sans-serif;
     transition: all 0.5s linear;
   }
 `;
