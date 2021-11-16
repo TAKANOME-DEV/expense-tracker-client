@@ -2,6 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
+  :root {
+    --green-color: #2ecc71;
+    --red-color: #c0392b;
+  }
+
   * {
     box-sizing: border-box;
     margin: 0;
