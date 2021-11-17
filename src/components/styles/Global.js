@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
+    ${"" /* min-height: 100vh; */}
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: all 0.5s linear;

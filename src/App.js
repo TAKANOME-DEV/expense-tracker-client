@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { Header, Main } from "./components";
+import { Header, Main, Footer } from "./components";
 import { Provider } from "./context/GlobalState";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { GlobalStyle, lightTheme, darkTheme } from "./components/styles/Global";
@@ -14,6 +14,7 @@ const App = () => {
         <GlobalStyle />
         <Header theme={theme} toggleTheme={toggleTheme} />
         <Main theme={theme} />
+        <Footer />
       </Provider>
     </ThemeProvider>
   );
