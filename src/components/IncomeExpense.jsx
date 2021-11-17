@@ -1,35 +1,14 @@
 import React, { useContext } from "react";
 import { Context } from "../context/GlobalState";
 import { numberWithCommas } from "../utils/format";
-import styled from "styled-components";
-
-const Container = styled.div`
-  background-color: ${({ theme }) => theme.body};
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 20px;
-  box-shadow: ${({ theme }) => theme.boxShadow};
-`;
-const Income = styled.div`
-  padding: 15px 35px;
-  border-right: 2px solid #dedede;
-`;
-const Expense = styled.div`
-  padding: 15px 35px;
-`;
-const Title = styled.h3`
-  text-transform: uppercase;
-  font-size: 20px;
-`;
-const IncAmount = styled.p`
-  color: var(--green-color);
-  font-size: 23px;
-`;
-const ExpAmount = styled.p`
-  color: var(--red-color);
-  font-size: 23px;
-`;
+import {
+  Income,
+  Container,
+  Expense,
+  Title,
+  IncAmount,
+  ExpAmount,
+} from "./styles/IncExp.styled";
 
 const IncomeExpense = () => {
   const { transactions } = useContext(Context);

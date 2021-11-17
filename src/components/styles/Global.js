@@ -20,10 +20,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     min-height: 100vh;
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
