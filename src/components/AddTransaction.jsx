@@ -38,17 +38,13 @@ const Input = styled.input`
 
 const AddTransaction = () => {
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   const { addTransaction } = useContext(Context);
 
-  const handleTextChange = (e) => {
-    setName(e.target.value);
-  };
+  const handleTextChange = (e) => setName(e.target.value);
 
-  const handleAmountChange = (e) => {
-    setAmount(e.target.value);
-  };
+  const handleAmountChange = (e) => setAmount(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,6 +53,8 @@ const AddTransaction = () => {
       amount,
     };
     addTransaction(newTransaction);
+    setName("");
+    setAmount("");
   };
 
   return (
