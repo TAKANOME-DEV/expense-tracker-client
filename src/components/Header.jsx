@@ -1,11 +1,23 @@
 import React from "react";
+import { Head, Nav, Logo } from "./styles/Header.styled";
+import { lightLogo, darkLogo } from "../assets";
+import Moon from "./Moon";
+import Sun from "./Sun";
 
-const Header = () => {
-	return (
-		<div>
-			<h1>Expense Tracker</h1>
-		</div>
-	);
+const Header = ({ theme, toggleTheme }) => {
+  return (
+    <Head>
+      <Nav>
+        <Logo
+          src={theme === "light" ? darkLogo : lightLogo}
+          alt="Expense Tracker Logo"
+        />
+        <div onClick={toggleTheme}>
+          {theme === "light" ? <Moon /> : <Sun />}
+        </div>
+      </Nav>
+    </Head>
+  );
 };
 
 export default Header;

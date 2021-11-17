@@ -5,15 +5,13 @@ import {
   IncomeExpense,
   TransactionList,
   AddTransaction,
-  Toggle,
 } from "./components";
 import { Provider } from "./context/GlobalState";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { GlobalStyle, lightTheme, darkTheme } from "./components/styles/Global";
 
 const Container = styled.div`
-  width: 350px;
-  margin: 30px auto;
+  margin: 100px 140px;
 `;
 
 const App = () => {
@@ -24,8 +22,7 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <Provider>
         <GlobalStyle />
-        <Toggle theme={theme} toggleTheme={toggleTheme} />
-        <Header />
+        <Header theme={theme} toggleTheme={toggleTheme} />
         <Container>
           <Balance />
           <IncomeExpense />
