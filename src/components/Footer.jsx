@@ -9,6 +9,7 @@ const Container = styled.footer`
   align-items: center;
   background: ${({ theme }) => theme.body};
   box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s linear;
 `;
 const Copyright = styled.p`
   color: ${({ theme }) => theme.text};
