@@ -9,10 +9,10 @@ export const Head = styled.header`
   background-color: ${({ theme }) => theme.body};
   box-shadow: var(--dark-boxShadow);
   transition: all 0.5s linear;
+  z-index: 1000;
 `;
 export const Nav = styled.nav`
   margin: 10px 300px;
-  ${"" /* margin: 10px 140px; */}
   display: flex;
   justify-content: space-between;
   align-items: center;
