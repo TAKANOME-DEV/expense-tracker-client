@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     --green-color: #2ecc71;
-    --red-color: #c0392b;
+    --red-color: #F2290D;
     --dark-color: #2F303A;
     --white-color: #ffffff;
 
@@ -20,7 +20,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
-    ${"" /* min-height: 100vh; */}
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: all 0.5s linear;
