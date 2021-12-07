@@ -5,13 +5,15 @@ export const formatMoney = (amount = 0) => {
     minimumFractionDigits: 2,
   };
 
-  // ? Check if its a clean amount
+  /** 
+   ** Check if its a clean amount
 
-  if (amount % 100 === 0) {
-    options.minimumFractionDigits = 0;
-  }
+   *? if (amount % 100 === 0) {
+    *? options.minimumFractionDigits = 0;
+   *? }
+  */
 
   const formatter = Intl.NumberFormat("en-US", options);
 
-  return formatter.format(amount / 100);
+  return formatter.format(amount);
 };
