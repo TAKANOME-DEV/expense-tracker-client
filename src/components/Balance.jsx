@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../context/GlobalState";
-import { numberWithCommas } from "../utils/format";
+import { formatMoney } from "../utils/formatMoney";
 import { Total, Container, Title } from "./styles/Balance.styled";
 
 const Balance = () => {
@@ -15,7 +15,7 @@ const Balance = () => {
   return (
     <Container>
       <Title>Your Balance</Title>
-      <Total color={color}>${numberWithCommas(total)}</Total>
+      <Total color={color}>{formatMoney(total)}</Total>
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../context/GlobalState";
-import { numberWithCommas } from "../utils/format";
+import { formatMoney } from "../utils/formatMoney";
 import { Amount, Button, List } from "./styles/Transaction.styled";
 
 const Transaction = ({ transaction }) => {
@@ -15,7 +15,8 @@ const Transaction = ({ transaction }) => {
     <List color={color}>
       {transaction.name}
       <Amount>
-        {sign}${numberWithCommas(Math.abs(transaction.amount))}
+        {sign}
+        {formatMoney(transaction.amount)}
       </Amount>
       <Button onClick={() => deleteTransaction(transaction.id)}>x</Button>
     </List>

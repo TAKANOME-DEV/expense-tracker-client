@@ -32,7 +32,7 @@ export const Provider = ({ children }) => {
     } catch (err) {
       dispatch({
         type: TRANSACTION_ERROR,
-        payload: err.response.data,
+        payload: err.response,
       });
     }
   };
