@@ -2,7 +2,7 @@ export const formatMoney = (amount = 0) => {
   const options = {
     currency: "USD",
     style: "currency",
-    minimumFractionDigits: 2,
+    // minimumFractionDigits: 2,
   };
 
   /** 
