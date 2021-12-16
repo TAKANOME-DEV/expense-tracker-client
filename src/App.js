@@ -1,36 +1,23 @@
-import "./App.css";
 import { ThemeProvider } from "styled-components";
-import {
-	Header,
-	Balance,
-	IncomeExpense,
-	TransactionList,
-	AddTransaction,
-	Toggle,
-} from "./components";
+import { Header, Main, Footer } from "./components";
 import { Provider } from "./context/GlobalState";
 import { useDarkMode } from "./hooks/useDarkMode";
-import { GlobalStyle, lightTheme, darkTheme } from "./styles/GlobalStyle";
+import { GlobalStyle, lightTheme, darkTheme } from "./components/styles/Global";
 
 const App = () => {
-	const [theme, toggleTheme] = useDarkMode();
-	const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
-	return (
-		<ThemeProvider theme={themeMode}>
-			<Provider>
-				<GlobalStyle />
-				<Toggle theme={theme} toggleTheme={toggleTheme} />
-				<Header />
-				<div className="container">
-					<Balance />
-					<IncomeExpense />
-					<TransactionList />
-					<AddTransaction />
-				</div>
-			</Provider>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={themeMode}>
+      <Provider>
+        <GlobalStyle />
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <Main theme={theme} />
+        <Footer />
+      </Provider>
+    </ThemeProvider>
+  );
 };
 
 export default App;

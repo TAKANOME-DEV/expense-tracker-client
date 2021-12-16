@@ -1,54 +1,27 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../context/GlobalState";
-import styled from "styled-components";
+import LightClose from "./svg/LightClose";
+import DarkClose from "./svg/DarkClose";
+import {
+  Overlay,
+  Container,
+  Head,
+  Title,
+  Form,
+  Button,
+  Label,
+  Input,
+} from "./styles/AddTransaction.styled";
 
-const Title = styled.h3`
-  margin-bottom: 10px;
-  text-transform: uppercase;
-`;
-
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-`;
-
-const Button = styled.button`
-  width: 100%;
-  padding: 10px 0;
-  font-size: 28px;
-  font-weight: bold;
-  box-shadow: ${({ theme }) => theme.boxShadow};
-  background-color: ${({ theme }) => theme.text};
-  color: ${({ theme }) => theme.body};
-  border-radius: 20px;
-  cursor: pointer;
-`;
-const Label = styled.label`
-  font-size: 20px;
-  margin-bottom: 10px;
-`;
-const Input = styled.input`
-  font-size: 20px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 3px solid ${({ theme }) => theme.text};
-  outline: none;
-`;
-
-const AddTransaction = () => {
+const AddTransaction = ({ theme, setIsOpen }) => {
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   const { addTransaction } = useContext(Context);
 
-  const handleTextChange = (e) => {
-    setName(e.target.value);
-  };
+  const handleTextChange = (e) => setName(e.target.value);
 
-  const handleAmountChange = (e) => {
-    setAmount(e.target.value);
-  };
+  const handleAmountChange = (e) => setAmount(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,24 +30,41 @@ const AddTransaction = () => {
       amount,
     };
     addTransaction(newTransaction);
+    setName("");
+    setAmount("");
+    setIsOpen(false);
+  };
+
+  const handleClose = (e) => {
+    if (e.target.id === "overlay") {
+      setIsOpen(false);
+    }
   };
 
   return (
-    <div>
-      <Title>Add New Transaction</Title>
-      <hr />
-      <form onSubmit={handleSubmit}>
-        <Section>
-          <Label>Text</Label>
+    <Overlay onClick={handleClose} id="overlay">
+      <Container>
+        <Head>
+          <Title>New Transaction</Title>
+          {theme === "light" ? (
+            <div onClick={() => setIsOpen(false)}>
+              <DarkClose />
+            </div>
+          ) : (
+            <div onClick={() => setIsOpen(false)}>
+              <LightClose />
+            </div>
+          )}
+        </Head>
+        <Form onSubmit={handleSubmit}>
+          <Label>Name</Label>
           <Input
             required
             value={name}
-            placeholder="Enter Text..."
+            placeholder="Enter Name..."
             type="text"
             onChange={handleTextChange}
           />
-        </Section>
-        <Section>
           <Label>Amount</Label>
           <Input
             required
@@ -83,10 +73,10 @@ const AddTransaction = () => {
             type="number"
             onChange={handleAmountChange}
           />
-        </Section>
-        <Button>Add Transaction</Button>
-      </form>
-    </div>
+          <Button>Add Transaction</Button>
+        </Form>
+      </Container>
+    </Overlay>
   );
 };
 

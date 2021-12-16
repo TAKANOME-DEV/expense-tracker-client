@@ -1,17 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../context/GlobalState";
-import { numberWithCommas } from "../utils/format";
-import styled from "styled-components";
-
-const Title = styled.h2`
-  margin: 0;
-  text-transform: uppercase;
-`;
-
-const Total = styled.p`
-  font-size: 30px;
-  letter-spacing: 2px;
-`;
+import { formatMoney } from "../utils/formatMoney";
+import { Total, Container, Title } from "./styles/Balance.styled";
 
 const Balance = () => {
   const { transactions } = useContext(Context);
@@ -20,11 +10,13 @@ const Balance = () => {
 
   const total = amounts.reduce((acc, num) => (acc += num), 0).toFixed(2);
 
+  const color = total < 0 ? "var(--red-color)" : "var(--green-color)";
+
   return (
-    <div>
+    <Container>
       <Title>Your Balance</Title>
-      <Total>${numberWithCommas(total)}</Total>
-    </div>
+      <Total color={color}>{formatMoney(total)}</Total>
+    </Container>
   );
 };
 
