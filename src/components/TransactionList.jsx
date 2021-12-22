@@ -1,8 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
+//* Context
 import { Context } from "../context/GlobalState";
+//* SVG
 import DarkPlus from "./svg/DarkPlus";
 import LightPlus from "./svg/LightPlus";
+//* Component
 import Transaction from "./Transaction";
 
 const Container = styled.div`

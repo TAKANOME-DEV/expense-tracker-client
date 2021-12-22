@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
+//* Context
 import { Context } from "../context/GlobalState";
+//* Utils
 import { formatMoney } from "../utils/formatMoney";
+//* Styles
 import { Total, Container, Title } from "./styles/Balance.styled";
 
 const Balance = () => {

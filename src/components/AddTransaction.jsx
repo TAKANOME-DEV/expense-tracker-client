@@ -1,7 +1,10 @@
 import React, { useContext, useState } from "react";
+//* Context
 import { Context } from "../context/GlobalState";
+//* SVG
 import LightClose from "./svg/LightClose";
 import DarkClose from "./svg/DarkClose";
+//* Styles
 import {
   Overlay,
   Container,

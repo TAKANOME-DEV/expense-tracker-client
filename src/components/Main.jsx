@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+//* Components
 import { Balance, IncomeExpense, TransactionList, AddTransaction } from ".";
+//* Styles
 import { Info, Container } from "./styles/Main.styled";
 
 const Main = ({ theme }) => {
